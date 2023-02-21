@@ -1,0 +1,115 @@
+/* To be remember : */
+/* Alt+shift+f == formatting */
+/* ctrl+Z == undo  */
+/* ctrl+ spacebar == suggestions */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text: 1.5rem;
+  --head: calc(1rem + 5vw);
+  --bg-color: #e90064;
+}
+.hero-section {
+  min-height: 100vh;
+  background: url("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+  animation: slide 0.6s ease-in-out;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0rem 1rem;
+  color: white;
+  transform: translateY(-100%);
+  animation: movedown 850ms ease-in 1s forwards;
+}
+@keyframes movedown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+.navbar h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+.navbar ul {
+  list-style: none;
+}
+.navbar ul li {
+  display: inline-block;
+  margin-left: 3rem;
+  font-size: var(--text);
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+}
+.navbar ul li a:hover {
+  border-bottom: 2px solid white;
+}
+.hero-text {
+  color: white;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.hero-text::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000eb;
+  z-index: -1;
+  top: 0;
+  opacity: 0.6;
+}
+.hero-text a {
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  background: var(--bg-color);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  border-radius: 20px;
+  display: block;
+  letter-spacing: 1px;
+  font-family: "Montserrat", sans-serif;
+}
+.hero-text a:hover {
+  background: whitesmoke;
+  color: #e90064;
+}
+.hero-text h2 {
+  font-size: var(--head);
+}
+.hero-text p {
+  font-size: 3rem;
+}
